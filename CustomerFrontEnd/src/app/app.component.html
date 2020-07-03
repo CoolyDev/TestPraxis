@@ -1,0 +1,31 @@
+<p>
+  <mat-toolbar style="background-color: #78180C">
+    <img style="height: 50px; background-size: cover;" src="https://firebasestorage.googleapis.com/v0/b/strive-50953.appspot.com/o/Px_Plan%20de%20travail%201.png?alt=media&token=d6b910c2-50e9-4740-a7ad-4b4d224267e6" align="start">
+    <span style="width: 10px">
+
+    </span>
+    <span style="color: white">Customer Manager</span>
+  </mat-toolbar>
+</p>
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="customers" class="example-table"
+         matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
