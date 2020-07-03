@@ -1,18 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CustomerService} from "./service/customer-service.service";
-export interface GithubApi {
-  items: GithubIssue[];
-  total_count: number;
-}
-
-export interface GithubIssue {
-  created_at: string;
-  number: string;
-  state: string;
-  title: string;
-}
-
 
 @Component({
   selector: 'app-root',
